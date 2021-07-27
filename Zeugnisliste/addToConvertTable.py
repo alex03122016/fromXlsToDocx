@@ -79,7 +79,11 @@ def addToConvertTable():
             "NaWi_ins", "Bio", "Che", "Phy", "Ku", "Mu", "Sp"]
 
     #[fieldName,        Column Integer or None,        table 0 or 1]
-    fieldsNotenSeite1 =[  ["Deu_ins",4,0],
+    fieldsNotenSeite1 =[
+                    ["name",1,0],
+                    ["vorname",2,0],
+                    ["geburtsdatum",3,0],
+                    ["Deu_ins",4,0],
                     ["Deu_m",None,None],
                     ["Deu_s",None,None],
                     ["Englisch", 10,0],
@@ -109,7 +113,11 @@ def addToConvertTable():
     #fieldsSchuelerSeite3
     #fieldsFehlzeitenSeite4
 
-    fieldsNotenQuelle =[  ["Deu_ins",8],
+    fieldsNotenQuelle =[
+                    ["name",1],
+                    ["vorname",2],
+                    ["geburtsdatum",4],
+                    ["Deu_ins",8],
                     ["Deu_m",9],
                     ["Deu_s",10],
                     ["Englisch", 11],

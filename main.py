@@ -85,7 +85,7 @@ def fromXlxsToDocx():
     doc = docx.Document('Zeugnisliste.docx')
 
     #transfer of data
-    for i in range(1,182):
+    for i in range(1,221):
         #get coordinates data from Convert sqlite3
         data = session.query(Convert).filter_by(id=i).all()
         data = data[0]
