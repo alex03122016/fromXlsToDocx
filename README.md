@@ -15,7 +15,12 @@ pip install openpyxl
 
 setup
 -------------------------------------------------------------------------------
-* run, adds Convert Data to Database test.db
+* run createTables.py to create the Database
+* run, add ConvertData to Database test.db
 'code python Zeugnisliste/addToConvertTable.py'
 + run to copy the data from test.xls to Zeugnisliste.docx
 'python main.py'
+*
+sqlite3 test.db; #enter sqlite
+DELETE FROM Convert;
+.quit
