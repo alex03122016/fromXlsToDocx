@@ -1,6 +1,20 @@
+from configuration import *
+import gui
 
-from Zeugnisliste.configuration import *
-def fromXlxsToDocx():
+def fromXlxsToDocx(xlsxFile, outputDocx):
+    print("i am in")
+    #open .xlxs
+    if xlsxFile == None or xlsxFile == "":
+        xlsxFile = "test.xlsx"
+    wb = Workbook(xlsxFile)
+    wb = openpyxl.load_workbook(xlsxFile)
+    ws = wb.active
+    sheet = wb['Zeugnisnoten_Abschluss']
+
+    #open .docx
+    print(outputDocx.name)
+    savepath= outputDocx.name
+    doc = docx.Document('Zeugnisliste.docx')
 
     #transfer of data
     for i in range(1,221):
@@ -19,6 +33,7 @@ def fromXlxsToDocx():
         targetCell.text = str(sourceValue)
 
     doc.save(savepath)
+    print("Was saved in", savepath)
 
 if __name__ == "__main__":
     fromXlxsToDocx()

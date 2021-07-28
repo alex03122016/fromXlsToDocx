@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from gui import *
 #https://leportella.com/sqlalchemy-tutorial/
 #create tables models for sqlite3 database
 Base = declarative_base()
@@ -71,13 +72,3 @@ engine = create_engine('sqlite:///test.db')
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
-
-#open .xlxs
-wb = Workbook('test.xlxs')
-wb = openpyxl.load_workbook('test.xlsx')
-ws = wb.active
-sheet = wb['Zeugnisnoten_Abschluss']
-
-#open .docx
-savepath= "Zegnislisteneu.docx"
-doc = docx.Document('Zeugnisliste.docx')
